@@ -1,0 +1,38 @@
+{
+  "name": "project-t01-cockroaches",
+  "version": "1.0.0",
+  "description": "project1",
+  "main": "app.js",
+  "engines": {
+    "node": "14.x",
+    "npm": "6.x"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/INFO30005-2021-SM1/project-t01-cockroaches.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/INFO30005-2021-SM1/project-t01-cockroaches/issues"
+  },
+  "homepage": "https://github.com/INFO30005-2021-SM1/project-t01-cockroaches#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.1",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.11.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.12.6",
+    "morgan": "^1.10.0",
+    "req": "^0.1.4",
+    "request": "^2.88.2"
+  },
+  "keywords": []
+}

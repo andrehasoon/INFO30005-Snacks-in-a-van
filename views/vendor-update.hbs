@@ -1,0 +1,85 @@
+<!-- check if there is any items in cart-->
+
+<body> 
+
+    <div id="map" style="width:100%; height:400px;"></div>
+
+<br><br>
+
+<div style=" padding-left: 30px">
+    <form action="/vendor/vendorUpdate" method="post">
+
+        <p id="demo"></p>
+        {{!-- <label>Location Description:</label><br><br> --}}
+        <label>Give a short description of where you are parking?</label><br><br>
+        <input type="hidden" name="locationLat" id="latInput" value="">
+        <input type="hidden" name="locationLong" id="lngInput" value="">
+        <input style="width: 80%;" type="text" placeholder="Type here..." name='locationDesc' value=""><br>
+        <br>
+        <hr>
+        <br>
+        <label>Set status:</label><br><br>
+        <div style="text-align: left; width: 300px">
+        <input type="radio" name="status" value="ready for orders" checked> Ready for orders <br>
+        <br>
+        <input type="radio" name="status" value="taking a break"> Taking a break<br>
+        <br>
+        <input type="radio" name="status" value="currently unavailable"> Currently unavailable <br>
+        <br>
+        </div>
+        
+        <hr>
+        <input type="submit" value="Update">
+    </form>
+</div>
+
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(initMap);
+  } else { 
+    alert("Geolocation is not supported by this browser.");
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+  alert("Got your current location");
+}
+
+// Initialize and add the map
+function initMap(position) {
+    const latitude = position.coords.latitude
+    const longitude = position.coords.longitude
+    document.getElementById("latInput").value = latitude
+    document.getElementById("lngInput").value = longitude
+    // The location of Uluru
+    //const uluru = { lat: -25.344, lng: 131.036 };
+  
+    const uluru = { lat: latitude, lng: longitude };
+    // The map, centered at Uluru
+    const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 18,
+        center: uluru,
+    });
+    // The marker, positioned at Uluru
+    const marker = new google.maps.Marker({
+        position: uluru,
+        map: map,
+    });
+}
+
+</script>
+
+
+<script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFI_5oyHij4yDQSMbRH7CA29Eol9rBVgs&callback=getLocation&libraries=&v=weekly"
+      async
+    ></script>
+
+</body>
+

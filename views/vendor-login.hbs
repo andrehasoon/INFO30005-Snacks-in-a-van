@@ -1,0 +1,30 @@
+<body style=" background-image: url('/images/background2.jpg');  background-repeat: no-repeat; width:100%; height:100%; background-size:cover;">  
+<section id = "login">
+    <h1 style= "color:beige; text-align:center">Welcome to Snacks Vendor App</h1>
+    <form method="post" action="/vendor/vendor-login">
+      <div style= "background-color:beige; padding:2%; width:70%; margin: auto;">
+          <table  align="center">
+              <tr>
+                <td>Account</td>
+                <td><input style="width:90%" placeholder="" name='vanName' id='vanname' value="" required="required"/></td>
+              </tr>   
+              <tr>
+                  <td>Password</td>
+                  <td><input style="width:90%" placeholder="" type="password" name='password' id='password' value="" required="required"/></td>
+              </tr>
+              <tr>
+                  <td colspan="2">
+                      <center><input type="submit" value="Login"  href="/vendor/:id">
+                     </center>
+                  </td>
+              </tr>
+          </table>
+          <span>
+                <p style= "font-size:small; text-align:center"><a href="/vendor/register">Don't have an account? Sign Up for vendors </a></p>
+          </span>
+        </div>
+    </form>
+</section>
+</body>
+
+

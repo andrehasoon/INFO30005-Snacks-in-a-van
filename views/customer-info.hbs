@@ -1,0 +1,27 @@
+<section>
+<div style="padding: 5%">
+<h1 >Hi, {{customer.firstName}}</h1>
+<br>
+<a style="padding: 5%" href="/customer/myOrders">View My Orders</a>
+</div>
+
+
+
+<hr>
+
+<div style="padding: 5%;">
+<h2><strong>Name:</strong></h2>
+<h2>{{customer.firstName}} {{customer.lastName}}</h2>
+<hr>
+<h2><strong>Email:</strong></h2>
+<h2>{{customer.email}}</h2>
+<hr>
+    <section id="orderlist">
+   <div class="tab" style="text-align: right;">
+    <a href="/customer/customer-edit">Edit</a>
+    <a href="/customer/logout">Log out</a>
+  </div>
+  </section>
+</div>
+
+</section>

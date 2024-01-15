@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snacks in a Van</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Mega&family=Rammetto+One&display=swap" rel="stylesheet">
+    <!--link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/--> 
+      
+    <style>
+        body {
+            margin: 0;
+            font-family: Montserrat, sans-serif;
+        }
+
+        .topnav {
+           overflow:hidden; 
+           style= border;
+            
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align:center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            
+        }
+
+        .topnav a:hover {
+            font-size: larger;
+        }
+
+        .topnav-right {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <header style="display:flex; align-items:center; line-height:47px; flex-wrap: wrap;">
+        <div class="storeName1" ><p>Snacks</p></div>
+        <div class="storeName2" ><p>In a Van</p></div>
+        <div class="mdl-grid" style="flex-grow:1">
+        <a class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--1-col-phone" href="/" >Home</a>
+        <div class="mdl-cell mdl-cell--10-col mdl-cell--6-col-tablet mdl-cell--3-col-phone"></div>
+        
+    </header>
+    <main>
+        <div class="topnav">
+        </div>
+        {{!-- <h2 align="left", style = "padding: 0px 60px 10px 60px" > 
+        <a href="/customer/login">login</a>  <a href="/customer/signup", style = "padding: 30px;">signup</a> 
+        <a href="/customer/shoppingCart", align="right", style="padding: 0px 30px 0px 1500px"> <b><img  src="/images/cart.png"></b></a> </h2> --}}
+            {{{body}}}
+    </main>
+    <footer>
+        {{!-- <p>an INFO30005 project</p> --}}
+    </footer>
+    <!-- i class="fas fa-search"></i (use for searchicon) -->
+</body>
+</html>

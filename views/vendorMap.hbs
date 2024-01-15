@@ -1,0 +1,79 @@
+  
+<script>
+const clientLat = {{clientLat}}
+const clientLong = {{clientLong}}
+var vendorList = []
+{{#each vendors}}
+vendorList.push({
+  _id: "{{this._id}}",
+  vanName: "{{this.vanName}}",
+  locationDesc: "{{this.locationDesc}}",
+  locationLat: {{this.locationLat}},
+  locationLong: {{this.locationLong}}
+})
+{{/each}}
+function initMap() {
+    const clientPos = {lat: clientLat, lng: clientLong}
+    var map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 15,
+      center: clientPos
+    })
+    const clientMarker = new google.maps.Marker({
+      position: clientPos,
+      map: map,
+    })
+    const clientMarkerInfo = new google.maps.InfoWindow({
+      content: "Your current position. <br> Please note that this may be partially inaccurate on some devices."
+    })
+    clientMarker.addListener("click", ()=>{
+      clientMarkerInfo.open(map, clientMarker)
+    })
+    var i;
+    for (i=0; i<vendorList.length; i++) {
+      const vendor = vendorList[i]
+      const vendorPos = {lat: vendor.locationLat, lng: vendor.locationLong}
+      const vendorMarker = new google.maps.Marker({
+        position: vendorPos,
+        map: map,
+        icon: "/images/food-truck.png"
+      })
+      const form = '<form action="/customer/snacks" method="post"><input type="hidden" name="vendorId" value="'
+        + vendor._id
+        + '"><button type="submit">choose vendor</button></form>'
+      const vendorMarkerInfo = new google.maps.InfoWindow({
+        content: vendor.vanName + "<br>" + vendor.locationDesc + "<br>" + form
+      })
+      vendorMarker.addListener("click", ()=>{
+        vendorMarkerInfo.open(map, vendorMarker)
+      })
+    }
+}
+</script>
+
+<div style="width:100%; display:flex">
+<div style="width:50%; ">
+<div id="map"></div>
+  <script async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFI_5oyHij4yDQSMbRH7CA29Eol9rBVgs&callback=initMap&libraries=&v=weekly"
+  ></script>
+  <div id="attribution">
+    Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a>
+    from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+  </div>
+</div>
+</div>
+<div id="vendorList" style="padding: 5%;">
+  {{#each vendors}}
+  {{this.vanName}}: {{this.locationDesc}}
+    <form action="/customer/snacks" method="post">
+      <input type="hidden" name="vendorId" value="{{this._id}}">
+      <button type="submit">choose vendor</button>
+    </form>
+    <br>
+  {{/each}}
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>

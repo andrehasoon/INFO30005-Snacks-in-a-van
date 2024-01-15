@@ -1,0 +1,90 @@
+<!-- display all the items in this order-->
+<div style="padding: 2%;">
+  <a style="padding: 2%" href="/vendor/id/{{vendorId}}/allOrders">Back</a>  
+  <br>
+  <br>
+ <h1> Order Details</h1>  
+<div style=" margin-left: 20px;">
+    <h2>Order number: {{order._id}}</h2>
+    <hr>
+    <h2>Order items: </h2>
+    {{!-- {{#if order}} --}}
+    <ul>
+        {{#each order.items}}
+        <ul>
+
+            <div>
+                
+                <span style="font-size:var(--text-medium); margin-left: 20px;">{{this.snackName}}    x {{this.quantity}}<span>
+
+                
+
+            </div>
+            <hr>
+        </ul>
+        {{/each}}
+    </ul>
+
+    <h2 id="amount">Total: $  {{totalAmount}}</h2>
+    <hr>
+    <h2>Customer name: {{order.customerLastName}}</h2>
+    <hr>
+    <h2>Order created time: {{order.prettyDateTime}}</h2>
+    <hr>
+    <h2 id="timeleft">Time left until discount:</h2>
+    <hr>
+    <script>
+    // get the order created date and time
+    var createdAtTime = new Date("{{order.createdAt}}").getTime();
+
+
+    // Run myfunc every second
+    var discountCountDown = setInterval(function() {
+    var now = new Date().getTime();
+
+    // 15min = 900000 ms
+    var timeleft =900000 - (now - createdAtTime);
+    // Display the message when countdown is over
+    if (timeleft < 0) {
+        clearInterval(discountCountDown);
+        
+        document.getElementById("timeleft").innerHTML = "Time left until discount: [TIME UP!!] 20% discount to Customer";
+        document.getElementById("amount").innerHTML = "Total: $  {{totalAmount}} x 0.8 = $"+("{{totalAmount}}" *0.8)
+    } else{
+        // Calculating the minutes and seconds left
+        var minutes = Math.floor((timeleft) / (1000 * 60));
+        var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+        
+
+        document.getElementById("timeleft").innerHTML = "Time left until discount:[" + minutes +"min " + seconds + "sec ]"
+    }
+        
+
+    }, 1000);
+    </script>
+    
+    <form action="/vendor/orderUpdate/{{order._id}}" method="post">
+        <h2>Change order status: </h2>
+        <div class="select">
+        <select id="standard-select" name="orderStatus">
+            <option value="outstanding">Outstanding</option>
+            <option value="in progress">In progress</option>
+            <option value="fulfilled">Fulfilled</option>
+            <option value="picked-up">Picked-up</option>
+        </select>
+        <span class="focus"></span>
+        </div>
+        <hr>
+        <input type="submit">
+        
+    </form>
+
+</div>
+</div>    
+
+<!-- empty order-->
+{{!-- {{else}}
+
+<h1 style="text-align: center;">No item in this order</h1>
+
+{{/ if}} --}}

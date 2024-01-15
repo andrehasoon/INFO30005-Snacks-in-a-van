@@ -1,0 +1,339 @@
+{
+	"info": {
+		"_postman_id": "e7c88939-440f-4062-8ac0-2527db2d17f6",
+		"name": "assignment_stage2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get all customers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://snackinavan-team01.herokuapp.com/customer/",
+					"protocol": "https",
+					"host": [
+						"snackinavan-team01",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"customer",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get one customer",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://snackinavan-team01.herokuapp.com/customer/id/607e9812d1bf49399a6effa0",
+					"protocol": "https",
+					"host": [
+						"snackinavan-team01",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"customer",
+						"id",
+						"607e9812d1bf49399a6effa0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add a new customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"abc@gmail.com\",\r\n    \"firstName\": \"Roxie\",\r\n    \"lastName\": \"Merrill\",\r\n    \"locationLong\": 2222,\r\n    \"locationLat\": 1111\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://snackinavan-team01.herokuapp.com/customer",
+					"protocol": "https",
+					"host": [
+						"snackinavan-team01",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all snacks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://snackinavan-team01.herokuapp.com/customer/snacks",
+					"protocol": "https",
+					"host": [
+						"snackinavan-team01",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"customer",
+						"snacks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get one snack",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://snackinavan-team01.herokuapp.com/customer/snacks/607bc93ed5f2322fab9bd704",
+					"protocol": "https",
+					"host": [
+						"snackinavan-team01",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"customer",
+						"snacks",
+						"607bc93ed5f2322fab9bd704"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add a new order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"snackId\": \"607bcaa3d5f2322fab9bd706\",\r\n    \"snackQuantity\": 10,\r\n    \"vendorId\": \"607e5568bd78ba2d97aaf2fb\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://snackinavan-team01.herokuapp.com/customer/addOrder/6081722ff0e3d26a34e2e426",
+					"protocol": "https",
+					"host": [
+						"snackinavan-team01",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"customer",
+						"addOrder",
+						"6081722ff0e3d26a34e2e426"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all vendors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://snackinavan-team01.herokuapp.com/vendor/",
+					"protocol": "https",
+					"host": [
+						"snackinavan-team01",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"vendor",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get one vendor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://snackinavan-team01.herokuapp.com/vendor/id/607da0bebd5d0a0ab211244d",
+					"protocol": "https",
+					"host": [
+						"snackinavan-team01",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"vendor",
+						"id",
+						"607da0bebd5d0a0ab211244d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get outstanding orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://snackinavan-team01.herokuapp.com/vendor/id/607e5568bd78ba2d97aaf2fb/outstanding",
+					"protocol": "https",
+					"host": [
+						"snackinavan-team01",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"vendor",
+						"id",
+						"607e5568bd78ba2d97aaf2fb",
+						"outstanding"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add a new vendor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Jason\",\r\n    \"lastName\": \"Smith\",\r\n    \"vanName\": \"snackinavan\",\r\n    \"status\": \"taking a break\",\r\n    \"locationDesc\": \"somewhere outside\",\r\n    \"locationLong\": 9992.3,\r\n    \"locationLat\": 111.234\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://snackinavan-team01.herokuapp.com/vendor",
+					"protocol": "https",
+					"host": [
+						"snackinavan-team01",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"vendor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://snackinavan-team01.herokuapp.com/vendor/allOrders",
+					"protocol": "https",
+					"host": [
+						"snackinavan-team01",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"vendor",
+						"allOrders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update a vendor status",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"vendorId\": \"607e5611bd78ba2d97aaf2fd\",\r\n    \"status\": \"taking a break\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://snackinavan-team01.herokuapp.com/vendor/vendorUpdate",
+					"protocol": "https",
+					"host": [
+						"snackinavan-team01",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"vendor",
+						"vendorUpdate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update an order status",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"orderStatus\": \"fulfilled\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://snackinavan-team01.herokuapp.com/vendor/orderUpdate/608174d0fef93c6ac3d1e4f0",
+					"protocol": "https",
+					"host": [
+						"snackinavan-team01",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"vendor",
+						"orderUpdate",
+						"608174d0fef93c6ac3d1e4f0"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

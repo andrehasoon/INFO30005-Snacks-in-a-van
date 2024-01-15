@@ -1,0 +1,51 @@
+<body style="background-image: url('/images/background1.jpg');  background-repeat: no-repeat; width:100%; height:100%; background-size:cover;">
+<section id="signUp">
+    <h1 style= "color:beige; text-align:center">Vendor Signup</h1>
+        <form method="post" action="/vendor/register">
+            <div  style= "background-color:beige; padding:10px; width:70%; margin: auto;">
+                
+                <p  style="font-size:small; text-align:center"><a href="/vendor/vendor-login">Already have account? Please Login </a></p>
+              
+              <table align="center">
+                  <tr>
+                      <td> Account</td>
+                      <td> <input style="width:90%" placeholder="Van Name" name='vanName' id='vanName' value="" required="required"/></td>
+                    </tr>
+                    <tr>
+                      <td>Password</td>
+                      <td><input style="width:90%" placeholder="" type="password" name='password' id='password' value="" required="required"/></td>
+                    </tr>
+                    <tr>
+                      <td>Pw Confirm</td>
+                      <td><input style="width:90%" placeholder="" name='confirmPassword' id='password' value="" required="required"/></td>
+                    </tr>
+                    <tr>
+                      <td>First Name</td>
+                      <td><input style="width:90%" placeholder="Given" name='firstName' id='nameFamily' value="" required="required"/></td>
+                    </tr>
+                    <tr>
+                      <td >Last Name</td>
+                      <td><input style="width:90%" placeholder="Family" name='lastName' id='nameGiven' value="" required="required"/></td>
+                    </tr>
+                    <tr>
+                      <td><input type="hidden" name='locationDesc' id='locationDesc' value="111" required="required"/></td>
+                    </tr>
+                    <tr>
+                      <td><input type="hidden" name='locationLong' id='locationLong' value="111" required="required"/></td>
+                    </tr>
+                    <tr>
+                      <td><input type="hidden" name='locationLat' id='locationLat' value="222" required="required"/></td>
+                    </tr>
+                    <tr>
+                      <td><input type="hidden" name='status' id='status' value="ready for orders" required="required"/></td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" ><center><input type="submit" style= "padding:1.5%; " value="Sign Up" ></center></td>
+                    </tr>
+              </table>
+        </div>
+    </form>
+</section>
+</body>
+
+          

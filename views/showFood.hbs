@@ -1,0 +1,62 @@
+<section id="oneFood">
+
+     <h1 style="display:flex; justify-content: space-around;">
+     <div>
+      <a href="/customer/snacks"> <span class="material-icons">arrow_back</span></a><b style="font-family:monospace; color:#3B3B3B"> {{thisfood.name}}</b>
+     </div>
+
+     <div>
+      <a href="/customer/shoppingCart"><span class="material-icons">shopping_cart</span></a>
+     </div>
+      
+    </h1>
+    <h3></h3>
+    <section id="oneFood-details">
+        <section id="oneFood-picture">
+            <img  src="/images/snack{{thisfood.imageId}}.jpg">
+        </section>
+
+        <section id="oneFood-text">
+            <p style="font-family:Avantgarde" id="description">{{thisfood.description}}</p>
+            <p style="font-size:30px;" id="price"><b>${{thisfood.formattedPrice}}</b></p>
+            <table>
+                <tr><td style="text-align:left; font-family:fantasy;">calories:</td><td style="text-align:right; color:red">{{thisfood.calories}}kcal</td></tr>
+                <tr><td style="text-align:left; font-family:fantasy;">fat:</td><td style="text-align:right; color:red">{{thisfood.fat}}g</td></tr>
+                <tr><td style="text-align:left; font-family:fantasy;">protein:</td><td style="text-align:right; color:red">{{thisfood.protein}}g</td></tr>
+            </table>
+            <p><form method="POST">
+                    <input type="hidden" name ="snackName" value= "{{thisfood.name}}" />
+                    <input type="hidden" name ="price" value= {{thisfood.price}} />
+                    <input style="font-family:monospace; text-align:right" type="number" name="quantity" placeholder="Enter Number here" min="1" value="1"/>
+                    <button style="font-family:fantasy; font-size:24px; color:grey" type="submit" onclick="showModal()">add</button>
+                </form>
+            </p>
+        </section>
+    </section>
+
+</section>
+
+
+
+<!-- show this modal when the add button is clicked -->
+<div id="addtocartPopUp" class="modal-background">
+  <div class="modal-foreground" style="background-color:white">
+    <p>You've added this food to your shopping cart!</p>
+    <div style="display:flex"><p><span style="font-size: 40px" onclick="closeModal()">&times;</span></p>
+      <a href="/customer/shoppingCart"><span style="text-align:right" class="material-icons">add_shopping_cart</span></a></div>
+     </div>
+  </div>
+</div>
+
+
+
+<script>
+    function showModal() {
+        var modal = document.getElementById("addtocartPopUp");
+        modal.style.display = 'block'
+    }
+    function closeModal() {
+        var modal = document.getElementById("addtocartPopUp");
+        modal.style.display = "none";
+    }
+</script>

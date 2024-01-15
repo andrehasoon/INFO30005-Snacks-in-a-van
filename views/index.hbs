@@ -1,0 +1,38 @@
+<section id="foodList">
+  <div class="mdl-grid" style="display:flex justify-content: space-between;align-items: center;"> 
+    <div class="mdl-cell mdl-cell--6-col mdl-cell--2-col-phone mdl-cell--4-col-tablet" >
+      <form style="display:flex; justify-content: space-between;flex-direction: row;align-items: center;" class="mdl-grid" method="get" action="/customer/snacks">
+        <div class="mdl-cell mdl-cell--1-col mdl-cell--1-col-phone mdl-cell--1-col-tablet"></div>
+
+        <div class="mdl-cell mdl-cell--5-col mdl-cell--2-col-phone mdl-cell--4-col-tablet">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+
+            <input class="mdl-textfield__input" type="text" id="foodSearch" size="20" name="foodName" pattern="[A-Za-z]*" title="letters only" autofocus="">
+            <label class="mdl-textfield__label" for="foodSearch">Search</label>   
+          </div>
+        </div>
+     <div class="mdl-cell mdl-cell--1-col mdl-cell--1-col-phone mdl-cell--1-col-tablet">
+        <a href="/customer/snacks/?">
+            <span class="material-icons">
+             refresh
+            </span>
+        </a>
+      </div>
+    <div class="mdl-cell mdl-cell--5-col" mdl-cell--2-col-tablet>
+      </div>
+      </form>
+    </div>
+
+
+
+   <div class="mdl-cell mdl-cell--6-col mdl-cell--2-col-phone mdl-cell--4-col-tablet" style="display:flex; justify-content:flex-end; align-items:center;i font-size:20px;">
+    <a href="/customer/customer-info"><span class="material-icons">account_circle</span></a>
+    <a href="/customer/shoppingCart"><span class="material-icons">shopping_cart</span></a>
+    </div>
+  </div>
+
+    
+    {{#listfood foods}}{{/listfood}}
+
+
+</section>

@@ -1,0 +1,59 @@
+{{!-- {{#each authors}}
+<li><a href="/author-management/{{this._id}}">{{this.first_name}}</a></li>
+{{/each}} --}}
+
+
+{{!-- <h1>{{items.snackId}}</h1> --}}
+
+<section id="checkOut">
+<h2 style= "font-size: 47px", "padding-left:30px">Hi, {{customer.firstName}}!</h2>
+
+<h2 style="padding-left:30px">Your Snacks: </h2>
+<ul>
+
+{{#each items}}
+<li>{{this.snackName}}    Quantity: {{this.quantity}}     Price: ${{this.snackTotal}}</li>
+{{/each}}
+
+
+</ul>
+</div>
+<h2 style="padding-left:30px">Total:</h2>
+<p> ${{totalAmount}}</p>
+
+<hr>
+
+<h2 style="padding-left:30px">Van Name: </h2>
+<p> {{vendor.vanName}}</p>
+
+
+<hr>
+
+<h2 style="padding-left:30px">Van location:</h2>
+<p> {{vendor.locationDesc}}</p>
+
+
+<hr>
+
+<form action="/customer/addOrder" method="post">
+
+{{!--
+
+<input type="hidden" name ="vendorId" value= "{{vendor._id}}" />--}}
+{{!--TEST--}}
+<input type="hidden" name ="customerId" value= "{{customer._id}}" />
+<input type="hidden" name ="vendorId" value= "{{vendor._id}}" />
+
+<label for="payment">Payment:</label><br><br>
+<input type="radio" name="paymentType" value="Cash" checked >Cash On The Barrel <br>
+<input type="radio" name="paymentType" value="Card">Card<br><br>
+<hr>
+<input type="submit" value="Check out">
+</form>
+</section>
+
+
+
+{{!-- <form method="POST">
+                <button type="submit">Place Order</button>
+</form> --}}

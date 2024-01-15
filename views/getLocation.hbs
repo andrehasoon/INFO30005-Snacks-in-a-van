@@ -1,0 +1,22 @@
+<h1>Please wait...</h1>
+
+<form id="coordinates" action="/customer/vanMap" method="post">
+  <input id = "latitude" type = "hidden" name = "latitude">
+  <input id = "longitude" type = "hidden" name = "longitude">
+</form>
+
+
+<script>
+//await new Promise((resolve, reject) => {
+  navigator.geolocation.getCurrentPosition((position) => {
+  var latInput = document.getElementById("latitude")
+  latInput.value = position.coords.latitude
+
+  var longInput = document.getElementById("longitude")
+  longInput.value = position.coords.longitude
+
+  document.getElementById("coordinates").submit()
+  //resolve()
+}, ()=>{}, {enableHighAccuracy: true})//})
+
+</script>

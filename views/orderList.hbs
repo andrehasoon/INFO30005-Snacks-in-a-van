@@ -1,0 +1,45 @@
+<section id="orderList">
+
+  <h1>Orders</h1>
+  {{#if orders}}
+  <table align="center" style="align-items: center; width:40%">
+    <tr>
+      <th>OrderId</th>
+      <th>Van Name</th>
+      <th>Order Date</th>
+      <th>Items</th>
+      <th>Status</th>
+      <th>Time Until Discount</th>
+      <th>Action</th>
+    </tr>
+    {{#each orders}}
+      <tr  align="center" style ="font-size:medium;">
+        <td>{{this._id}}</td>
+        <td>{{this.vanName}}</td>
+        <td>{{this.prettyDateTime}}</td>
+        <td><ul>
+          {{#each this.items}}
+            <li>
+              {{this.snackName}} x{{this.quantity}}
+            </li>
+          {{/each}}
+        </ul></td>
+        <td>{{this.orderStatus}}</td>
+        <td>{{this.discountMessage}}</td>
+            <td><form action="/customer/changeOrder" method="post">
+              <input type="hidden" name="orderId" value = {{this._id}}>
+              <input type="hidden" name="customerId" value={{this.customerId}}>
+              <button type="submit" style="margin-right: 100px;">Change</button>
+            </form>
+              <form action="/customer/cancelOrder" method="post">
+              <input type="hidden" name="orderId" value = {{this._id}}>
+              <input type="hidden" name="customerId" value={{this.customerId}}>
+              <button type="submit" style="margin-right: 100px;">Cancel</button>
+            </form></td>
+      </tr>
+    {{/each}}
+  </table>
+  {{else}} <h3>No orders found.</h3>
+  {{/if}}
+
+</section>

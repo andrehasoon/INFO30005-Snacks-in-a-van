@@ -1,0 +1,37 @@
+
+
+
+<section id="orderlist">
+  <div class="tab" style="text-align: right; display:flex">
+    <a href="/vendor/vendorUpdate">Update status</a>
+    <a href="/vendor/logout">Log out</a>
+  </div>
+  <h1 style="text-align: center;">Order</h1>
+
+  <div class="tab">
+    {{!-- <button class="tablinks" onclick="openCity(event, 'London')">London</button>
+    <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+    <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button> --}}
+
+    <a class="tablinks" href="/vendor/id/{{vendorId}}/allOrders">All Orders</a>
+    <a class="tablinks" href="/vendor/id/{{vendorId}}/outstanding">Outstanding</a>
+    <a class="tablinks" href="/vendor/id/{{vendorId}}/inProgress">In progress</a>
+    <a class="tablinks" href="/vendor/id/{{vendorId}}/fulfilled">Fulfilled</a>
+  </div>
+  {{#if orders}}
+  <div style="text-align: center" class="table-responsive">
+  <table align="center" display="flex"> 
+    <tr>
+      <th>No. </th>
+      <th>Customer's name</th>
+      <th>Status</th>
+      <th>Time Stamp</th>
+    </tr>
+    {{#listVendorOrder orders}}{{/listVendorOrder}}
+    <a style="color: rgba(5, 5, 68, 0.425);">
+  </table>
+  </div>
+  {{else}} <h1 style="text-align: center;">There is no order found</h1>
+  {{/if}}
+
+  </section>

@@ -1,0 +1,32 @@
+<!-- check if there is any items in cart-->
+<section id="shoppingcart">
+    {{# if items}}
+    <ul>
+        {{#each items}}
+        <ul>
+
+            <div style="text-align:left; width:100%">
+                <button type="button"><a href="/customer/shoppingCart/remove/{{this._id}}">Remove</a></button>
+                <span style="font-size:var(--text-medium); margin-left: 20px;">{{this.snackName}}    x {{this.quantity}}<span>
+
+                <h2 style="text-align: right; margin-right: 20px"><strong>Price: ${{this.snackTotal}}</strong></h2>
+
+            </div>
+            <hr>
+        </ul>
+        {{/each}}
+    </ul>
+
+    <h1 style="text-align:right; color:red;">Total: $  {{totalAmount}}</h1>
+    <hr>
+    <div style="text-align:right">
+        <a href="/customer/checkOut" ><button type="submit" style="margin-right: 100px;">Place Order</button></a>
+    </div>
+</section>
+
+<!-- empty cart-->
+{{else}}
+
+<h1 style="text-align: center;">Oops, there is no items in cart</h1>
+
+{{/ if}}
